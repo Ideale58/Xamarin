@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="td2.view.AddItemPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Enregistrer" Clicked="Save_Clicked"> </ToolbarItem> <!----> 
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+        <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <Label Text="Titre" />
+            <Entry Text="{Binding Place.Title}" Placeholder="Entrer un Titre" />
+            <Label Text="Description" />
+            <Editor Text="{Binding Place.Description}" Placeholder="Entrer une description du lieu" Margin="0" />
+            <Button x:Name="PictureButton"  Text="Télécharger Image" Clicked="Upload" />
+            <Image x:Name="imageView"  />
+            <Label Text="Emplacement" />
+            <maps:Map x:Name="map" IsShowingUser="True" MapType="Street" HeightRequest="400" />
+            <Button Text="Déplacer Pin" /> <!--Clicked="Deplacer"-->
+            </StackLayout>
+        </ScrollView>
+        </StackLayout>
+        </ContentPage.Content>
+</ContentPage>

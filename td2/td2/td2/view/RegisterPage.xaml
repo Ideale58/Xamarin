@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="td2.view.RegisterPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Enregistrer" Clicked="Save">
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Email" />
+            <Entry Text="{Binding User.Email}" Placeholder="Entrez votre email" />
+            <Label Text="Prénom" />
+            <Entry Text="{Binding User.FirstName}" Placeholder="Entrez votre prénom" />
+            <Label Text="Nom" />
+            <Entry Text="{Binding User.LastName}" Placeholder="Entrez votre nom" />
+            <Label Text="Mot de passe" />
+            <Entry IsPassword="True" Text="{Binding User.Password}" Placeholder="Entrez votre mot de passe " />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

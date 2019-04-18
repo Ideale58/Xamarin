@@ -1,0 +1,66 @@
+C:\Users\taylo\Downloads\td2 (6)\td2\td2\bin\Debug\netstandard2.0\td2.deps.json
+C:\Users\taylo\Downloads\td2 (6)\td2\td2\bin\Debug\netstandard2.0\td2.dll
+C:\Users\taylo\Downloads\td2 (6)\td2\td2\bin\Debug\netstandard2.0\td2.pdb
+C:\Users\taylo\Downloads\td2 (6)\td2\td2\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\taylo\Downloads\td2 (6)\td2\td2\obj\Debug\netstandard2.0\view\MainPage.xaml.g.cs
+C:\Users\taylo\Downloads\td2 (6)\td2\td2\obj\Debug\netstandard2.0\view\MenuPage.xaml.g.cs
+C:\Users\taylo\Downloads\td2 (6)\td2\td2\obj\Debug\netstandard2.0\view\PlaceItemPage.xaml.g.cs
+C:\Users\taylo\Downloads\td2 (6)\td2\td2\obj\Debug\netstandard2.0\td2.csproj.CoreCompileInputs.cache
+C:\Users\taylo\Downloads\td2 (6)\td2\td2\obj\Debug\netstandard2.0\td2.AssemblyInfoInputs.cache
+C:\Users\taylo\Downloads\td2 (6)\td2\td2\obj\Debug\netstandard2.0\td2.AssemblyInfo.cs
+C:\Users\taylo\Downloads\td2 (6)\td2\td2\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\taylo\Downloads\td2 (6)\td2\td2\obj\Debug\netstandard2.0\td2.dll
+C:\Users\taylo\Downloads\td2 (6)\td2\td2\obj\Debug\netstandard2.0\td2.pdb
+C:\Users\taylo\Desktop\projetXamarin\td2\td2\td2\bin\Debug\netstandard2.0\td2.deps.json
+C:\Users\taylo\Desktop\projetXamarin\td2\td2\td2\bin\Debug\netstandard2.0\td2.dll
+C:\Users\taylo\Desktop\projetXamarin\td2\td2\td2\bin\Debug\netstandard2.0\td2.pdb
+C:\Users\taylo\Desktop\projetXamarin\td2\td2\td2\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\taylo\Desktop\projetXamarin\td2\td2\td2\obj\Debug\netstandard2.0\view\MainPage.xaml.g.cs
+C:\Users\taylo\Desktop\projetXamarin\td2\td2\td2\obj\Debug\netstandard2.0\view\MenuPage.xaml.g.cs
+C:\Users\taylo\Desktop\projetXamarin\td2\td2\td2\obj\Debug\netstandard2.0\view\PlaceItemPage.xaml.g.cs
+C:\Users\taylo\Desktop\projetXamarin\td2\td2\td2\obj\Debug\netstandard2.0\td2.csproj.CoreCompileInputs.cache
+C:\Users\taylo\Desktop\projetXamarin\td2\td2\td2\obj\Debug\netstandard2.0\td2.AssemblyInfoInputs.cache
+C:\Users\taylo\Desktop\projetXamarin\td2\td2\td2\obj\Debug\netstandard2.0\td2.AssemblyInfo.cs
+C:\Users\taylo\Desktop\projetXamarin\td2\td2\td2\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\taylo\Desktop\projetXamarin\td2\td2\td2\obj\Debug\netstandard2.0\td2.dll
+C:\Users\taylo\Desktop\projetXamarin\td2\td2\td2\obj\Debug\netstandard2.0\td2.pdb
+C:\Users\taylo\Desktop\projetXamarin\td2\td2\td2\obj\Debug\netstandard2.0\td2.csprojAssemblyReference.cache
+C:\Users\Adélie\source\repos\td2\td2\td2\bin\Debug\netstandard2.0\td2.deps.json
+C:\Users\Adélie\source\repos\td2\td2\td2\bin\Debug\netstandard2.0\td2.dll
+C:\Users\Adélie\source\repos\td2\td2\td2\bin\Debug\netstandard2.0\td2.pdb
+C:\Users\Adélie\source\repos\td2\td2\td2\obj\Debug\netstandard2.0\td2.csprojAssemblyReference.cache
+C:\Users\Adélie\source\repos\td2\td2\td2\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Adélie\source\repos\td2\td2\td2\obj\Debug\netstandard2.0\view\MainPage.xaml.g.cs
+C:\Users\Adélie\source\repos\td2\td2\td2\obj\Debug\netstandard2.0\view\MenuPage.xaml.g.cs
+C:\Users\Adélie\source\repos\td2\td2\td2\obj\Debug\netstandard2.0\view\PlaceItemPage.xaml.g.cs
+C:\Users\Adélie\source\repos\td2\td2\td2\obj\Debug\netstandard2.0\td2.csproj.CoreCompileInputs.cache
+C:\Users\Adélie\source\repos\td2\td2\td2\obj\Debug\netstandard2.0\td2.AssemblyInfoInputs.cache
+C:\Users\Adélie\source\repos\td2\td2\td2\obj\Debug\netstandard2.0\td2.AssemblyInfo.cs
+C:\Users\Adélie\source\repos\td2\td2\td2\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Adélie\source\repos\td2\td2\td2\obj\Debug\netstandard2.0\td2.dll
+C:\Users\Adélie\source\repos\td2\td2\td2\obj\Debug\netstandard2.0\td2.pdb
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\td2.csprojAssemblyReference.cache
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\AddItemPage.xaml.g.cs
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\ItemDetailPage.xaml.g.cs
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\MainPage.xaml.g.cs
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\MenuPage.xaml.g.cs
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\PlaceItemPage.xaml.g.cs
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\td2.csproj.CoreCompileInputs.cache
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\td2.AssemblyInfoInputs.cache
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\td2.AssemblyInfo.cs
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\bin\Debug\netstandard2.0\td2.deps.json
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\bin\Debug\netstandard2.0\td2.dll
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\bin\Debug\netstandard2.0\td2.pdb
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\td2.dll
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\td2.pdb
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\CommentPage.xaml.g.cs
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\RegisterPage.xaml.g.cs
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\LoginPage.xaml.g.cs
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\AddCommentPage.xaml.g.cs
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\ProfilePage.xaml.g.cs
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\bin\Debug\netstandard2.0\Windows.Foundation.UniversalApiContract.winmd
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\td2.csproj.CopyComplete
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\ChoixProfilPage.xaml.g.cs
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\PasswordPage.xaml.g.cs
