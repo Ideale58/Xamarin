@@ -18,7 +18,7 @@ namespace td2.data
         Task<ImageItem> PostImage(byte[] imageData);
         Task SavePlaceItem(CreatePlaceRequest place);
         Task<Response> SaveMdp(UpdatePasswordRequest mdp);
-
+        Task<UserItem> UpdateProfile(UpdateProfileRequest user);
         //Task SavePlaceItem(PlaceItem item, bool isNewItem);
 
 

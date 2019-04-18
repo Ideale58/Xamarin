@@ -1,4 +1,5 @@
 ﻿using Common.Api.Dtos;
+using MonkeyCache.SQLite;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -357,6 +358,48 @@ namespace td2.data
 
         }
 
+
+        public async Task<UserItem> UpdateProfile(UpdateProfileRequest user)
+
+        {
+            
+            UserItem res = new UserItem();
+            HttpRequestMessage request = new HttpRequestMessage(new HttpMethod("PATCH"), url + "me");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", TOKEN);
+
+
+            try
+            {
+                var json = JsonConvert.SerializeObject(user);
+
+                var u = new StringContent(json, Encoding.UTF8, "application/json");
+                request.Content = u;
+                HttpResponseMessage response = await client.SendAsync(request);
+                var content = await response.Content.ReadAsStringAsync();
+                res = JsonConvert.DeserializeObject<Response<UserItem>>(content).Data;
+
+
+
+
+                if (response.IsSuccessStatusCode)
+                {
+
+                    Debug.WriteLine(@"Mot de passe changé");
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+
+            }
+            return await Task.FromResult(res);
+
+        }
         /*
 
                 public async Task DeletePlaceItem(string id)

@@ -13,14 +13,17 @@
             <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
             <Label Text="Titre" />
             <Entry Text="{Binding Place.Title}" Placeholder="Entrer un Titre" />
-            <Label Text="Description" />
+            <Label Text="Description" /> 
             <Editor Text="{Binding Place.Description}" Placeholder="Entrer une description du lieu" Margin="0" />
-            <Button x:Name="PictureButton"  Text="Télécharger Image" Clicked="Upload" />
-            <Image x:Name="imageView"  />
+            <Button Image="@drawable/ic_add_photo_alternate" x:Name="PictureButton"  Text="Télécharger Image" Clicked="Upload" />
+            <Button Image="@drawable/ic_add_a_photo" x:Name="PictureButton2"  Text="Prendre une photo" Clicked="Photographier" />
+            <Image x:Name="imageView" Aspect = "AspectFill" />
+                <StackLayout>
             <Label Text="Emplacement" />
             <maps:Map x:Name="map" IsShowingUser="True" MapType="Street" HeightRequest="400" />
-            <Button Text="Déplacer Pin" /> <!--Clicked="Deplacer"-->
-            </StackLayout>
+            <Button Text="Déplacer Pin" Clicked="Deplacer"/> <!---->
+        </StackLayout>
+        </StackLayout>
         </ScrollView>
         </StackLayout>
         </ContentPage.Content>

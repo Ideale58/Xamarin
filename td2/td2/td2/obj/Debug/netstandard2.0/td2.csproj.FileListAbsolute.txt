@@ -64,3 +64,4 @@ C:\Users\Adélie\source\repos\projet\td2\td2\td2\bin\Debug\netstandard2.0\Window
 C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\td2.csproj.CopyComplete
 C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\ChoixProfilPage.xaml.g.cs
 C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\PasswordPage.xaml.g.cs
+C:\Users\Adélie\source\repos\projet\td2\td2\td2\obj\Debug\netstandard2.0\view\UpdateProfilePage.xaml.g.cs

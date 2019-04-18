@@ -23,9 +23,10 @@ namespace td2.view
         }
 
         
-        /*async void Connexion(object sender, EventArgs e)
+        async void Modifier(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new MainPage());
-        }*/
+
+            await Navigation.PushAsync(new UpdateProfilePage(user,imageView1));
+        }
     }
 }

@@ -35,11 +35,16 @@ namespace td2.view
             await AddItemViewModel.SavePlace();
             await Navigation.PopAsync();
         }
-        /* async void Deplacer(object sender, EventArgs e)
+        public void Deplacer(object sender, EventArgs e)
          {
-            await AddItemViewModel.Deplacer();
+             AddItemViewModel.Deplacer();
          }
-         */
+
+        async void Photographier(object sender, EventArgs e)
+        {
+            await AddItemViewModel.PrendrePhoto(imageView);
+        }
+
         /*async void Save_Clicked(object sender, EventArgs e)
         {
 

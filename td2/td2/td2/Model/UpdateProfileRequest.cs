@@ -12,5 +12,9 @@ namespace TD.Api.Dtos
         
         [JsonProperty("image_id")]
         public int? ImageId { get; set; }
+
+        [JsonProperty("imageUrl")]
+        public string ImageUrl { get => "https://td-api.julienmialon.com/images/" + (ImageId == null ? 1 : ImageId); set => ImageUrl = value; }
+
     }
 }

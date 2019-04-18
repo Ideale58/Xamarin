@@ -3,12 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="td2.view.ProfilePage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Modifier">
+        <ToolbarItem Text="Modifier" Clicked="Modifier">
 
         </ToolbarItem>
-    </ContentPage.ToolbarItems><!--Clicked="Modifier"-->
-  <ContentPage.Content >
+    </ContentPage.ToolbarItems><!---->
+  <ContentPage.Content 
+      IsRefreshing="{Binding Refresh, Mode=OneWay}" 
+      RefreshCommand="{Binding LoadCommand}">
     <StackLayout>
+        <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+<Image x:Name="imageView1" Source="{Binding User.ImageUrl}" Aspect = "AspectFill" HeightRequest="300" WidthRequest="300"/>
       <Label Text="Prénom" />
       <Entry Text="{Binding User.FirstName }" IsReadOnly="True" />
       <Label Text="Nom" />
@@ -16,8 +21,8 @@
 
       <Label Text="Email" />
       <Entry Text="{Binding User.Email}" IsReadOnly="True" />
-
-      <!--<Image Source="{Binding User.ImageUrl}" />-->
+    </StackLayout>
+        </ScrollView> 
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>

@@ -20,7 +20,7 @@ namespace td2.viewModel
     {
         private MediaFile _mediaFile;
         public CreatePlaceRequest Place { get; set; }
-        public Map Map;
+        public Map Map { get; set; }
         public ImageItem image;
         private byte[] byteimage;
         public Command LoadPin { get; set; }
@@ -28,12 +28,12 @@ namespace td2.viewModel
 
         public AddItemViewModel(Map map)
         {
+            LoadPin = new Command(async () => await RunPin());
             Place = new CreatePlaceRequest();
             image = new ImageItem();
             byteimage = new byte[4];
 
             Map = map;
-            LoadPin = new Command(async () => await RunPin());
             LoadPin.Execute(null);
         }
 
@@ -83,7 +83,8 @@ namespace td2.viewModel
                     if (_mediaFile == null) return;
                    
                     imageView.Source = ImageSource.FromStream(() => _mediaFile.GetStream());
-                    ImageSource im = ImageSource.FromStream(() => _mediaFile.GetStream());
+                    imageView.SetValue(Image.HeightRequestProperty , 300);
+                    imageView.SetValue(Image.WidthRequestProperty, 100);
                     
                     var memoryStream = new MemoryStream();
                    
@@ -118,6 +119,7 @@ namespace td2.viewModel
                 Place.ImageId = image.Id;
                 //Place.Latitude = 2;
                 //Place.Longitude = 4;
+                AddPlaceItem();
                 await restService.SavePlaceItem(Place);
 
             }
@@ -131,23 +133,63 @@ namespace td2.viewModel
             }
         }
 
-        //Upload picture button    
-        /*private async void btnUpload_Clicked(object sender, EventArgs e)
-        {
-            if (_mediaFile == null)
-            {
-                await DisplayAlert("Error", "There was an error when trying to get your image.", "OK");
-                return;
-            }
-            else
-            {
-                UploadImage(_mediaFile.GetStream());
-            }
-        }*/
-        /*public async void Deplacer()
+        public void Deplacer()
         {
             Map.Pins[0].Position = Map.VisibleRegion.Center;
-        }*/
+        }
+
+        public async Task PrendrePhoto(Image imageView)
+        {
+            if (Refresh)
+                return;
+
+            Refresh = true;
+
+            try
+            {
+
+                await CrossMedia.Current.Initialize();
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                {
+                    Debug.WriteLine("No Camera", ":(No Camera available.)", "OK");
+                    return;
+                }
+                else
+                {
+                    var mediaOption = new PickMediaOptions()
+                    {
+                        PhotoSize = PhotoSize.Medium
+                    };
+                    _mediaFile = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                    {
+                        Directory = "Sample",
+                        Name = "myImage.jpg"
+                    });
+
+                    if (_mediaFile == null) return;
+                    imageView.Source = ImageSource.FromStream(() => _mediaFile.GetStream());
+
+                    imageView.SetValue(Image.HeightRequestProperty, 300);
+                    imageView.SetValue(Image.WidthRequestProperty, 100);
+
+                    var memoryStream = new MemoryStream();
+
+                    _mediaFile.GetStream().CopyTo(memoryStream);
+                    byteimage = memoryStream.ToArray();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                Refresh = false;
+            }
+
+
+        }
+
 
     }
 }
