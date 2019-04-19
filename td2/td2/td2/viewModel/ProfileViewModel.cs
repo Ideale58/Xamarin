@@ -17,13 +17,13 @@ namespace td2.viewModel
         public ImageItem image;
         private byte[] byteimage;
         public UserItem User { get; set; }
-        public UpdateProfileRequest profile { get; set; }
+        public UpdateProfileRequest Profile { get; set; }
 
         public ProfileViewModel(UserItem user)
         {
             
             User = user;
-            profile = new UpdateProfileRequest();
+            Profile = new UpdateProfileRequest();
             image = new ImageItem();
             byteimage = new byte[4];
 
@@ -89,12 +89,12 @@ namespace td2.viewModel
             {
                 
                 image = await restService.PostImage(byteimage);
-                profile.FirstName = User.FirstName;
-                profile.LastName = User.LastName;
-                profile.ImageId = User.ImageId=image.Id;
-                //profile.ImageUrl = User.ImageUrl;
+                Profile.FirstName = User.FirstName;
+                Profile.LastName = User.LastName;
+                Profile.ImageId = User.ImageId=image.Id;
+                //Profile.ImageUrl = User.ImageUrl;
 
-                User=await restService.UpdateProfile(profile);
+                User = await restService.UpdateProfile(Profile);
 
             }
             catch (Exception ex)

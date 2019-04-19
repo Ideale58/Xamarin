@@ -16,16 +16,17 @@ namespace td2.viewModel
             User = new RegisterRequest();
         }
 
-        public async Task SaveUser()
+        public async Task<LoginResult> SaveUser()
         {
-            if (Refresh)
-                return;
+            LoginResult res = null;
+            if (!Refresh)
+            {
 
-            Refresh = true;
+                Refresh = true;
 
             try
             {
-                await restService.SaveUser(User);
+                res = await restService.SaveUser(User);
 
             }
             catch (Exception ex)
@@ -36,6 +37,10 @@ namespace td2.viewModel
             {
                 Refresh = false;
             }
+                return res;
+            }
+            return null;
         }
+    
     }
 }

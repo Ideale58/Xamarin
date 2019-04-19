@@ -17,25 +17,28 @@ namespace td2.view
     {
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
         List<MenuItem> List;
-
+        MenuItem place;
+        MenuItem inscription;
+        MenuItem profil;
+        MenuItem connexion;
         public MenuPage()
         {
+            place = new MenuItem { Id = Item.Menu.PlaceItem, Title = "PlaceItem" };
+            inscription = new MenuItem { Id = Item.Menu.Register, Title = "S'inscrire" };
+            profil = new MenuItem { Id = Item.Menu.ChoixProfil, Title = "Profil" };
+            connexion = new MenuItem { Id = Item.Menu.Login, Title = "Connexion" };
             InitializeComponent();
-            List = new List<MenuItem>
+            List = new List<MenuItem> { place,profil,inscription,connexion};
+
+            if (RestService.TOKEN == null)
             {
-                new MenuItem { Id = Item.Menu.PlaceItem, Title = "PlaceItem" },
-                new MenuItem { Id = Item.Menu.Register, Title = "S'inscrire" },
-                new MenuItem { Id = Item.Menu.ChoixProfil, Title = "Profil" },
-                new MenuItem { Id = Item.Menu.Login, Title = "Connexion" }
-        };
-            /*if (RestService.TOKEN != null) {
+                List.Remove(profil);
+            }
+            else
+            {
                 List.Remove(connexion);
             }
-            else {
-                List.Remove(profil);
-
-            }*/
-
+           
 
 
             listView.ItemsSource = List;
@@ -46,8 +49,17 @@ namespace td2.view
                     return;
 
                 var id = (int)((MenuItem)e.SelectedItem).Id;
+                
                 await RootPage.NavigateMenu(id);
+                
             };
+            
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            
         }
     }
 

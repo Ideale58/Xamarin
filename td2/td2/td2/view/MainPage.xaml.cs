@@ -28,6 +28,7 @@ namespace td2.view
 
         public async Task NavigateMenu(int Id)
         {
+
             if (!MenuPages.ContainsKey(Id))
             {
                 switch (Id)

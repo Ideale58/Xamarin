@@ -16,26 +16,30 @@ namespace td2.viewModel
             User = new LoginRequest();
         }
 
-        public async Task ConnexionUser()
+        public async Task<LoginResult> ConnexionUser()
         {
-            if (Refresh)
-                return;
+            LoginResult res = null;
+            if (!Refresh) { 
 
-            Refresh = true;
 
-            try
-            {
-                await restService.ConnexionUser(User);
+                Refresh = true;
 
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            finally
-            {
-                Refresh = false;
-            }
+                try
+                {
+                    res = await restService.ConnexionUser(User);
+
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex);
+                }
+                finally
+                {
+                    Refresh = false;
+                }
+                return res;
+        }
+            return null;
         }
     }
 }

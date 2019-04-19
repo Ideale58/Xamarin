@@ -5,7 +5,10 @@
              Title="MenuPage">
     <StackLayout>
         <ListView x:Name="listView"
-                  HasUnevenRows="True">
+                  HasUnevenRows="true"
+                  RefreshCommand="{Binding LoadCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding Refresh, Mode=OneWay}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

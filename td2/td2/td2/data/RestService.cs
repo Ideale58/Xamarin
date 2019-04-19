@@ -95,6 +95,7 @@ namespace td2.data
                 if (response.IsSuccessStatusCode)
                 {
 
+                    TOKEN = res.AccessToken;
                     Debug.WriteLine(@"User enregistré");
 
                 }

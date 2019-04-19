@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using TD.Api.Dtos;
+using td2.data;
 using Xamarin.Forms;
 
 namespace td2.viewModel
@@ -15,13 +16,14 @@ namespace td2.viewModel
         public ObservableCollection<PlaceItemSummary> Items { get; set; }
         public Command LoadCommand { get; set; }
 
-      
+
 
 
         public PlaceItemViewModel()
         {
             Items = new ObservableCollection<PlaceItemSummary>();
             LoadCommand = new Command(async () => await ExecuteCommand());
+
         }
 
         public async Task ExecuteCommand()
@@ -50,6 +52,7 @@ namespace td2.viewModel
                 Refresh = false;
             }
         }
+
 
     }
 }

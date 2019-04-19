@@ -18,17 +18,14 @@ namespace td2.view
 		{
 			InitializeComponent ();
             BindingContext = CommentsViewModel = commentsViewModel;
-            /*if (RestService.TOKEN == null) {
-                this.addcomment.IsEnabled=false;
-            }*/
         }
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            /*if (RestService.TOKEN == null)
+            if (RestService.TOKEN == null)
             {
                 this.addcomment.IsEnabled = false;
-            }*/
+            }
             if (CommentsViewModel.Comments.Count == 0)
                 CommentsViewModel.LoadCommentsCommand.Execute(null);
         }

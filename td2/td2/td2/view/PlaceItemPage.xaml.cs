@@ -15,20 +15,26 @@ namespace td2.view
 	public partial class PlaceItemPage : ContentPage
 	{
         PlaceItemViewModel placeItemViewModel;
+        public Command LoadCommand2 { get; set; }
 
-		public PlaceItemPage ()
+        public PlaceItemPage ()
 		{
 			InitializeComponent ();
             BindingContext = placeItemViewModel = new PlaceItemViewModel();
-		}
+       
+        }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            /*if (RestService.TOKEN == null)
+            if (RestService.TOKEN == null)
             {
-                this.addplace.IsEnabled = false;
-            }*/
+                Addplace.IsEnabled = false;
+            }
+            else
+            {
+                Addplace.IsEnabled = true;
+            }
             if (placeItemViewModel.Items.Count == 0)
                 placeItemViewModel.LoadCommand.Execute(null);
         }
@@ -42,7 +48,7 @@ namespace td2.view
             //DisplayAlert("Item Tapped", ((PlaceItemSummary)args.SelectedItem).Title.ToString(), "Ok");
              PlaceItem place = await placeItemViewModel.restService.FindPlaceItemById(item.Id);
              await Navigation.PushAsync(new ItemDetailPage(place));
-
+            
              // Manually deselect item.
              ItemsListView.SelectedItem = null;
         }
@@ -53,5 +59,7 @@ namespace td2.view
             //await Navigation.PushModalAsync(new AddItemPage());
             
         }
+
+       
     }
 }

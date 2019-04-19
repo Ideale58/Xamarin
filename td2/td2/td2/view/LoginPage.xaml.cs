@@ -22,8 +22,16 @@ namespace td2.view
 
         async void Connexion(object sender, EventArgs e)
         {
-            await loginViewModel.ConnexionUser();
-            //await Navigation.PushModalAsync(new MainPage());
+            LoginResult res = await loginViewModel.ConnexionUser();
+            if (res != null)
+            {
+                Application.Current.MainPage=new MainPage();
+                await DisplayAlert("Connexion", "Utilisateur connecté", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Connexion", "Mauvais identifiants", "OK");
+            }
         }
     }
 }

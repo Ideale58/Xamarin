@@ -22,11 +22,16 @@ namespace td2.view
 
         async void Save(object sender, EventArgs e) {
             Console.WriteLine(sender.ToString());
-            //DisplayAlert("Alert", sender.ToString(), "OK");
-            await registerViewModel.SaveUser();
-
-
-            await Navigation.PushModalAsync(new MainPage());
+            LoginResult res = await registerViewModel.SaveUser();
+            if (res != null)
+            {
+                Application.Current.MainPage = new MainPage();
+                await DisplayAlert("Connexion", "Utilisateur connecté", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Connexion", "Mauvais identifiants", "OK");
+            }
 
         }
 
