@@ -5,18 +5,23 @@
              x:Class="td2.view.ItemDetailPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Commentaire" Clicked="Comment_Clicked">
+        <ToolbarItem Text="Commentaires" Clicked="Comment_Clicked">
 
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-      <StackLayout>
-            <Label Text="Text:" FontSize="Medium" />
-            <Label Text="{Binding Item.Id}" FontSize="Small"/>
-            <Label Text="{Binding Item.Title}" FontSize="Small"/>
-            <Label Text="Description:" FontSize="Medium" />
-            <Label Text="{Binding Item.Description}" FontSize="Small"/>
-            <maps:Map x:Name="map" MapType="Street" IsEnabled="True" />
-        </StackLayout>
+            <StackLayout>
+            <ScrollView VerticalOptions="FillAndExpand" Margin="10" VerticalScrollBarVisibility="Always">
+                <StackLayout>
+
+                    <Label Text="Text:" FontSize="Medium" />
+                <Label Text="{Binding Item.Title}" FontSize="Small"/>
+                <Image Source="{Binding Item.ImageUrl}" Aspect = "AspectFill" HeightRequest="300" WidthRequest="200" />
+                <Label Text="Description:" FontSize="Medium" />
+                <Label Text="{Binding Item.Description}" FontSize="Small"/>
+                    <maps:Map x:Name="map" MapType="Street" IsEnabled="True" HeightRequest="400" />
+                </StackLayout>
+            </ScrollView>
+            </StackLayout>
   </ContentPage.Content>
 </ContentPage>

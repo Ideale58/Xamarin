@@ -33,9 +33,16 @@ namespace td2.view
         }
         async void Save(object sender, EventArgs e)
         {
-
-            await profileViewModel.Update();
-            await Navigation.PopAsync();
+            UserItem res=await profileViewModel.Update();
+            if (res != null)
+            {
+                await Navigation.PopAsync();
+                await DisplayAlert("Profil", "Profil mis à jour", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Profil", "Profil non mis à jour, réessayer", "OK");
+            }
         }
     }
 }

@@ -21,7 +21,6 @@ namespace td2.view
         }
 
         async void Save(object sender, EventArgs e) {
-            Console.WriteLine(sender.ToString());
             LoginResult res = await registerViewModel.SaveUser();
             if (res != null)
             {

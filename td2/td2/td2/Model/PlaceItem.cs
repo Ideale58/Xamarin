@@ -25,5 +25,9 @@ namespace TD.Api.Dtos
 		
 		[JsonProperty("comments")]
 		public List<CommentItem> Comments { get; set; }
-	}
+
+        [JsonProperty("imageUrl")]
+        public string ImageUrl { get => "https://td-api.julienmialon.com/images/" + ImageId; set => ImageUrl = value; }
+
+    }
 }

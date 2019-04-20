@@ -13,7 +13,7 @@
     <StackLayout>
         <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
             <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-<Image x:Name="imageView1" Source="{Binding User.ImageUrl}" Aspect = "AspectFill" HeightRequest="300" WidthRequest="300"/>
+<Image x:Name="imageView1" Source="{Binding User.ImageUrl}" Aspect = "AspectFill" HeightRequest="300" WidthRequest="200"/>
       <Label Text="Prénom" />
       <Entry Text="{Binding User.FirstName }" IsReadOnly="True" />
       <Label Text="Nom" />

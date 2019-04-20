@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Api.Dtos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,13 +24,17 @@ namespace td2.view
 
         async void Save(object sender, EventArgs e)
         {
-            Console.WriteLine(sender.ToString());
-            //DisplayAlert("Alert", sender.ToString(), "OK");
-            await passwordViewModel.SaveMdp();
+            Response res = await passwordViewModel.SaveMdp();
 
-
-            await Navigation.PopAsync();
-
+            if (res.IsSuccess)
+            {
+                await Navigation.PopAsync();
+                await DisplayAlert("Mot de passe", "Nouveau mot de passe enregistré", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Mot de passe", "Mot de passe non enregistré, réessayer", "OK");
+            }
         }
     }
 }

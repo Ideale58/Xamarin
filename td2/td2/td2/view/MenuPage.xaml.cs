@@ -33,10 +33,12 @@ namespace td2.view
             if (RestService.TOKEN == null)
             {
                 List.Remove(profil);
+                BtnDec.IsVisible = false;
             }
             else
             {
                 List.Remove(connexion);
+                BtnDec.IsVisible = true;
             }
            
 
@@ -56,10 +58,12 @@ namespace td2.view
             
         }
 
-        protected override void OnAppearing()
+        async void Deconnecter(object sender, EventArgs e)
         {
-            base.OnAppearing();
-            
+            RestService.TOKEN = null;
+            Application.Current.MainPage = new MainPage();
+            await DisplayAlert("Déconnexion", "Utilisateur déconnecté", "OK");
+
         }
     }
 

@@ -13,10 +13,10 @@ namespace td2.data
         Task<PlaceItem> FindPlaceItemById(int Id);
         Task<LoginResult> SaveUser(RegisterRequest user);
         Task<LoginResult> ConnexionUser(LoginRequest user);
-        Task SaveComment(CreateCommentRequest com, int id);
+        Task<Response> SaveComment(CreateCommentRequest com, int id);
         Task<UserItem> GetUser();
         Task<ImageItem> PostImage(byte[] imageData);
-        Task SavePlaceItem(CreatePlaceRequest place);
+        Task<Response> SavePlaceItem(CreatePlaceRequest place);
         Task<Response> SaveMdp(UpdatePasswordRequest mdp);
         Task<UserItem> UpdateProfile(UpdateProfileRequest user);
         //Task SavePlaceItem(PlaceItem item, bool isNewItem);

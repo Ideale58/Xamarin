@@ -128,8 +128,6 @@ C:\Users\Adélie\source\repos\projet\td2\td2\td2.Android\obj\Debug\81\res\drawab
 C:\Users\Adélie\source\repos\projet\td2\td2\td2.Android\obj\Debug\81\res\drawable-hdpi\ic_add_photo_alternate.png
 C:\Users\Adélie\source\repos\projet\td2\td2\td2.Android\obj\Debug\81\res\drawable-xxhdpi\ic_add_photo_alternate.png
 C:\Users\Adélie\source\repos\projet\td2\td2\td2.Android\obj\Debug\81\res\drawable-xxxhdpi\ic_add_photo_alternate.png
-C:\Users\Adélie\source\repos\projet\td2\td2\td2\bin\Debug\netstandard2.0\td2.dll
-C:\Users\Adélie\source\repos\projet\td2\td2\td2.Android\bin\Debug\td2.dll.mdb
 C:\Users\Adélie\source\repos\projet\td2\td2\td2.Android\obj\Debug\81\linksrc\Plugin.Settings.Abstractions.dll.mdb
 C:\Users\Adélie\source\repos\projet\td2\td2\td2.Android\obj\Debug\81\linksrc\Plugin.Settings.dll.mdb
 C:\Users\Adélie\source\repos\projet\td2\td2\td2.Android\obj\Debug\81\linksrc\td2.dll.mdb

@@ -3,12 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="td2.view.MenuPage"
              Title="MenuPage">
-    <StackLayout>
+    <StackLayout Orientation="Vertical" >
+        <Button x:Name="BtnDec" Text="Déconnexion" Clicked="Deconnecter"></Button>
+    
         <ListView x:Name="listView"
-                  HasUnevenRows="true"
-                  RefreshCommand="{Binding LoadCommand}"
-                IsPullToRefreshEnabled="true"
-                IsRefreshing="{Binding Refresh, Mode=OneWay}">
+                  HasUnevenRows="true">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -18,7 +17,6 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+        </ListView></StackLayout>
 
 </ContentPage>

@@ -13,6 +13,7 @@ using System.Diagnostics;
 using td2.view;
 using Xamarin.Forms.PlatformConfiguration;
 using System.IO;
+using Common.Api.Dtos;
 
 namespace td2.viewModel
 {
@@ -106,12 +107,14 @@ namespace td2.viewModel
             }
         }
 
-        public async Task SavePlace()
+        public async Task<Response> SavePlace()
         {
-            if (Refresh)
-                return;
+            Response res = null;
+            if (!Refresh)
+            {
 
-            Refresh = true;
+
+                Refresh = true;
 
             try
             {
@@ -120,7 +123,7 @@ namespace td2.viewModel
                 //Place.Latitude = 2;
                 //Place.Longitude = 4;
                 AddPlaceItem();
-                await restService.SavePlaceItem(Place);
+                res=await restService.SavePlaceItem(Place);
 
             }
             catch (Exception ex)
@@ -130,7 +133,10 @@ namespace td2.viewModel
             finally
             {
                 Refresh = false;
+                }
+                return res;
             }
+            return null;
         }
 
         public void Deplacer()

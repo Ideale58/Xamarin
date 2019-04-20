@@ -19,15 +19,11 @@
                 CachingStrategy="RecycleElement"
                 ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
-                    <DataTemplate >
-                        <ViewCell >
-                            
+                    <DataTemplate>
+                        <ViewCell>
                             <StackLayout Padding="10">
-                                <Label Text="{Binding Path=Id}" />
                                 <Label Text="{Binding Path=Title}" />
-
-                                <Label Text="{Binding Path=Description}"/>
-
+                                <Label MaxLines="2"  Text="{Binding Path=Description} "/>
                                 <Image Source="{Binding Path=ImageUrl}" />
                             </StackLayout>
                         </ViewCell>

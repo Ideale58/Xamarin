@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Api.Dtos;
+using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using TD.Api.Dtos;
@@ -16,16 +17,18 @@ namespace td2.viewModel
             Comment = new CreateCommentRequest();
         }
 
-        public async Task SaveComment()
+        public async Task<Response> SaveComment()
         {
-            if (Refresh)
-                return;
+            Response res = null;
+            if (!Refresh)
+            {
 
-            Refresh = true;
+
+                Refresh = true;
 
             try
             {
-                await restService.SaveComment(Comment, idplace);
+                res= await restService.SaveComment(Comment, idplace);
 
             }
             catch (Exception ex)
@@ -35,7 +38,10 @@ namespace td2.viewModel
             finally
             {
                 Refresh = false;
+                }
+                return res;
             }
+            return null;
         }
 
     }

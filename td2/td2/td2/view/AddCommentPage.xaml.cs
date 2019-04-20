@@ -7,6 +7,7 @@ using td2.viewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Maps;
+using Common.Api.Dtos;
 
 namespace td2.view
 {
@@ -23,8 +24,16 @@ namespace td2.view
 
         async void Save(object sender, EventArgs e)
         {
-            await AddCommentViewModel.SaveComment();
-            await Navigation.PopAsync();
+            Response res=await AddCommentViewModel.SaveComment();
+            if (res.IsSuccess)
+            {
+                await Navigation.PopAsync();
+                await DisplayAlert("Commentaire", "Commmentaire ajouté", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Commentaire", "Commmentaire non ajouté, réessayer", "OK");
+            }
         }
     }
 }

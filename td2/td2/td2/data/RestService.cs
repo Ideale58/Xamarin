@@ -154,13 +154,13 @@ namespace td2.data
             return await Task.FromResult(res);
         }
 
-        public async Task SaveComment(CreateCommentRequest com, int id)
+        public async Task<Response> SaveComment(CreateCommentRequest com, int id)
 
         {
-            CreateCommentRequest res = new CreateCommentRequest();
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, url + "places/" + id + "/comments");
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", TOKEN);
 
+            Response res = new Response();
             //var uri = new Uri(url + "places/"+id+"/comments");
 
 
@@ -174,7 +174,7 @@ namespace td2.data
                 HttpResponseMessage response = await client.SendAsync(request);
 
                 var result = await response.Content.ReadAsStringAsync();
-                //var response = await client.PostAsync(uri, u);
+                res = JsonConvert.DeserializeObject<Response>(result);
 
 
 
@@ -195,6 +195,7 @@ namespace td2.data
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
 
             }
+            return await Task.FromResult(res);
 
         }
 
@@ -267,7 +268,7 @@ namespace td2.data
         }
  
 
-        public async Task SavePlaceItem(CreatePlaceRequest place)
+        public async Task<Response> SavePlaceItem(CreatePlaceRequest place)
 
         {
 
@@ -275,7 +276,8 @@ namespace td2.data
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, url + "places");
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", TOKEN);
 
-    
+
+            Response res = new Response();
 
             try
             {
@@ -289,7 +291,7 @@ namespace td2.data
                 //var response = await client.PostAsync(uri, u);
 
 
-            var res = JsonConvert.DeserializeObject<Response>(result);
+            res = JsonConvert.DeserializeObject<Response>(result);
 
 
                 if (response.IsSuccessStatusCode)
@@ -308,6 +310,7 @@ namespace td2.data
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
 
             }
+            return await Task.FromResult(res);
 
         }
 

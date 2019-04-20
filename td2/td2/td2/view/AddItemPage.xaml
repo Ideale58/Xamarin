@@ -20,8 +20,10 @@
             <Image x:Name="imageView" Aspect = "AspectFill" />
                 <StackLayout>
             <Label Text="Emplacement" />
+        <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
             <maps:Map x:Name="map" IsShowingUser="True" MapType="Street" HeightRequest="400" />
-            <Button Text="Déplacer Pin" Clicked="Deplacer"/> <!---->
+            </ScrollView>
+        <Button Text="Déplacer Pin" Clicked="Deplacer"/> <!---->
         </StackLayout>
         </StackLayout>
         </ScrollView>

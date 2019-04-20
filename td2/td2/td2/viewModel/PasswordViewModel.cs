@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Api.Dtos;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
@@ -15,16 +16,17 @@ namespace td2.viewModel
             Mdp = new UpdatePasswordRequest();
         }
 
-        public async Task SaveMdp()
+        public async Task<Response> SaveMdp()
         {
-            if (Refresh)
-                return;
+            Response res = null;
+            if (!Refresh)
+            {
 
-            Refresh = true;
+                Refresh = true;
 
             try
             {
-                await restService.SaveMdp(Mdp);
+                res=await restService.SaveMdp(Mdp);
 
             }
             catch (Exception ex)
@@ -34,7 +36,10 @@ namespace td2.viewModel
             finally
             {
                 Refresh = false;
+                }
+                return res;
             }
+            return null;
         }
 
     }

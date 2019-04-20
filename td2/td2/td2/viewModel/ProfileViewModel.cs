@@ -78,33 +78,36 @@ namespace td2.viewModel
             }
         }
 
-        public async Task Update()
+        public async Task<UserItem> Update()
         {
-            if (Refresh)
-                return;
-
-            Refresh = true;
-
-            try
+            if (!Refresh)
             {
-                
-                image = await restService.PostImage(byteimage);
-                Profile.FirstName = User.FirstName;
-                Profile.LastName = User.LastName;
-                Profile.ImageId = User.ImageId=image.Id;
-                //Profile.ImageUrl = User.ImageUrl;
 
-                User = await restService.UpdateProfile(Profile);
+                Refresh = true;
 
+                try
+                {
+
+                    image = await restService.PostImage(byteimage);
+                    Profile.FirstName = User.FirstName;
+                    Profile.LastName = User.LastName;
+                    Profile.ImageId = User.ImageId = image.Id;
+                    //Profile.ImageUrl = User.ImageUrl;
+
+                    User = await restService.UpdateProfile(Profile);
+
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex);
+                }
+                finally
+                {
+                    Refresh = false;
+                }
+                return User;
             }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            finally
-            {
-                Refresh = false;
-            }
+            return null;
         }
 
 

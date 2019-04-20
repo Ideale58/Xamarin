@@ -11,6 +11,7 @@ using Plugin.Media;
 using Plugin.Media.Abstractions;
 using TD.Api.Dtos;
 using td2.data;
+using Common.Api.Dtos;
 
 namespace td2.view
 {
@@ -32,8 +33,18 @@ namespace td2.view
         }
         async void Save_Clicked(object sender, EventArgs e)
         {
-            await AddItemViewModel.SavePlace();
-            await Navigation.PopAsync();
+
+            Response res = await AddItemViewModel.SavePlace();
+            if (res.IsSuccess)
+            {
+                Application.Current.MainPage = new MainPage();
+                //await Navigation.PopAsync();
+                await DisplayAlert("Lieu", "Lieu ajouté", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Lieu", "Lieu non ajouté, réessayer", "OK");
+            }
         }
         public void Deplacer(object sender, EventArgs e)
          {
