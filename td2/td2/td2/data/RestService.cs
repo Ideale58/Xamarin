@@ -253,8 +253,7 @@ namespace td2.data
             var result = await response.Content.ReadAsStringAsync();
 
              ImageItem res = JsonConvert.DeserializeObject<Response<ImageItem>>(result).Data;
-
-            Console.WriteLine(res.Id);
+            
             if (response.IsSuccessStatusCode)
             {
                 Console.WriteLine("Image uploaded!");

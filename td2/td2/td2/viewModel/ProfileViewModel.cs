@@ -55,8 +55,8 @@ namespace td2.viewModel
                     if (_mediaFile == null) return;
 
                     imageView.Source = ImageSource.FromStream(() => _mediaFile.GetStream());
-                    imageView.SetValue(Image.HeightRequestProperty, 300);
-                    imageView.SetValue(Image.WidthRequestProperty, 100);
+                   
+                
 
                     var memoryStream = new MemoryStream();
 

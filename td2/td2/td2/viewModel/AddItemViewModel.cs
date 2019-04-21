@@ -78,7 +78,7 @@ namespace td2.viewModel
                 {
                     var mediaOption = new PickMediaOptions()
                     {
-                        PhotoSize = PhotoSize.Medium
+                        PhotoSize = PhotoSize.Small
                     };
                     _mediaFile = await CrossMedia.Current.PickPhotoAsync();
                     if (_mediaFile == null) return;
@@ -91,7 +91,8 @@ namespace td2.viewModel
                    
                         _mediaFile.GetStream().CopyTo(memoryStream);
                         byteimage= memoryStream.ToArray();
-                    
+                        
+
 
                 }
                 
@@ -119,7 +120,15 @@ namespace td2.viewModel
             try
             {
                 image = await restService.PostImage(byteimage);
-                Place.ImageId = image.Id;
+                    if (image == null)
+                    {
+                        Place.ImageId = 1;
+                    }
+                    else
+                    {
+
+                        Place.ImageId = image.Id;
+                    }
                 //Place.Latitude = 2;
                 //Place.Longitude = 4;
                 AddPlaceItem();
@@ -164,7 +173,7 @@ namespace td2.viewModel
                 {
                     var mediaOption = new PickMediaOptions()
                     {
-                        PhotoSize = PhotoSize.Medium
+                        PhotoSize = PhotoSize.Small
                     };
                     _mediaFile = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
                     {
@@ -178,10 +187,12 @@ namespace td2.viewModel
                     imageView.SetValue(Image.HeightRequestProperty, 300);
                     imageView.SetValue(Image.WidthRequestProperty, 100);
 
-                    var memoryStream = new MemoryStream();
+                    //var memoryStream = new MemoryStream();
 
-                    _mediaFile.GetStream().CopyTo(memoryStream);
-                    byteimage = memoryStream.ToArray();
+                    //_mediaFile.GetStream().CopyTo(memoryStream);
+
+                    byteimage = File.ReadAllBytes(_mediaFile.Path);
+                    //byteimage = memoryStream.ToArray();
                 }
             }
             catch (Exception ex)
